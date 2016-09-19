@@ -3,14 +3,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <TimedAction.h>
 
-#define thingSpeakInterval 16000 // Time interval in milliseconds to get data from ThingSpeak (number of seconds * 1000 = interval)
-// Variable Setup
-long lastConnectionTime = 0;
-
 String lastCommandString = "black";
-boolean lastConnected = false;
-int failedCounter = 0;
-
 int brightness = 150;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(16, 2, NEO_GRB + NEO_KHZ800);
@@ -24,9 +17,6 @@ const char password[] = "";
 
 const char host[] = "api.thingspeak.com";
 
-// Initialize Arduino Ethernet Client
-
-
 void setup() {
 delay(100);
 // Setup Serial
@@ -34,28 +24,27 @@ Serial.begin(9600);
 delay(100);
 Serial.flush();
 delay(100);
-
 strip.begin();
 strip.show();
-
 strip.setBrightness(brightness);
 
-Serial.println();
+/*Serial.println();
     Serial.println();
     Serial.print("Connecting to ");
     Serial.println(ssid);
-
+*/
     WiFi.begin(ssid, password);
 
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
-        Serial.print(".");
+  //      Serial.print(".");
     }
 
-    Serial.println("");
+   /* Serial.println("");
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
+*/
 getColor();
 
 }
@@ -158,13 +147,10 @@ else
 {
 lastCommandString = "(no match)";
 }
-// Echo command
-//delay(200);
+/*
 Serial.print("CheerLight Command Received: ");
 Serial.println(lastCommandString);
-//delay(200);
-
-//delay(15000);
+*/
 }
 
 
