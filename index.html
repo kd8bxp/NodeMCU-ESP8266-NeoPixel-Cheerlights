@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+	<title>NodeMCU (ESP8266) Neopixel Cheerlights</title>
+
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">NodeMCU (ESP8266) Neopixel Cheerlights</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="pictures/">Pictures</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="license/">License</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="README/">README</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="pictures/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#nodemcu-esp8266-neopixel-cheerlights">NodeMCU (ESP8266) Neopixel Cheerlights</a></li>
+        
+            <li><a href="#info">Info</a></li>
+        
+            <li><a href="#notes">Notes:</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="nodemcu-esp8266-neopixel-cheerlights">NodeMCU (ESP8266) Neopixel Cheerlights</h1>
+<p><a href="https://github.com/kd8bxp/NodeMCU-ESP8266-NeoPixel-Cheerlights">Project Github Page</a>.</p>
+<h2 id="info">Info</h2>
+<p>Cheerlights is a world wide light show, all controlled by sending tweets to twitter to change the color! People build various projects for the light show. Generally it's around Christmas time, but really Cheerlights spread the cheer all year long.</p>
+<p>This is the beginning of a Halloween cheerlight project.
+The final project will make spooky noises when the colors change.
+And put in either a pumpkin or a skull (not sure yet).
+(This could be easy to change to X-Mas music for Christmas holiday.)</p>
+<p>In the past I've done projects using the ethernet shield for the Arduino UNO, so I was limited to where the projects could be put.
+Not finding a ESP8266 sketch that I could get to work correctly, I set out to make my own. Luckily I found making a few changes to my ethernet sketches, was easy to do.
+For more Info on <a href="http://cheerlights.com">Cheerlights</a>.
+To see pictures and fritzing, click on pictures above.</p>
+<p>I used a Neopixel 16 pixel ring, a nodemcu v.9 board. Arduino IDE 1.6.10 for Linux 64bit, the following libraries are required:</p>
+<p>ESP8266WiFi.h - This library gets installed when you add the ESP8266 boards to the Arduino IDE. Information and Setup can be found <a href="http://www.esp8266.com/wiki/doku.php?id=start-with-esp-12-arduino">here</a>.</p>
+<p>Adafruit_NeoPixel.h - <a href="https://github.com/adafruit/Adafruit_NeoPixel">Found Here</a>
+ This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.</p>
+<p>Finally - The TimedAction.h library - <a href="http://playground.arduino.cc/Code/TimedAction">Found Here</a>. Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.</p>
+<h2 id="notes">Notes:</h2>
+<p>NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.
+I've also dimmed the brightness down.
+I've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.</p>
+<p>It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use "Pin 2" you'd need to say "D2" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-09-19 01:22:14.801573
+-->

@@ -1,0 +1,79 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nProject Github Page\n.\n\n\nInfo\n\n\nCheerlights is a world wide light show, all controlled by sending tweets to twitter to change the color! People build various projects for the light show. Generally it's around Christmas time, but really Cheerlights spread the cheer all year long.\n\n\nThis is the beginning of a Halloween cheerlight project.\nThe final project will make spooky noises when the colors change.\nAnd put in either a pumpkin or a skull (not sure yet).\n(This could be easy to change to X-Mas music for Christmas holiday.)\n\n\nIn the past I've done projects using the ethernet shield for the Arduino UNO, so I was limited to where the projects could be put.\nNot finding a ESP8266 sketch that I could get to work correctly, I set out to make my own. Luckily I found making a few changes to my ethernet sketches, was easy to do.\nFor more Info on \nCheerlights\n.\nTo see pictures and fritzing, click on pictures above.\n\n\nI used a Neopixel 16 pixel ring, a nodemcu v.9 board. Arduino IDE 1.6.10 for Linux 64bit, the following libraries are required:\n\n\nESP8266WiFi.h - This library gets installed when you add the ESP8266 boards to the Arduino IDE. Information and Setup can be found \nhere\n.\n\n\nAdafruit_NeoPixel.h - \nFound Here\n\n This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.\n\n\nFinally - The TimedAction.h library - \nFound Here\n. Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.\n\n\nNotes:\n\n\nNodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.\n\n\nIt should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#nodemcu-esp8266-neopixel-cheerlights", 
+            "text": "Project Github Page .", 
+            "title": "NodeMCU (ESP8266) Neopixel Cheerlights"
+        }, 
+        {
+            "location": "/#info", 
+            "text": "Cheerlights is a world wide light show, all controlled by sending tweets to twitter to change the color! People build various projects for the light show. Generally it's around Christmas time, but really Cheerlights spread the cheer all year long.  This is the beginning of a Halloween cheerlight project.\nThe final project will make spooky noises when the colors change.\nAnd put in either a pumpkin or a skull (not sure yet).\n(This could be easy to change to X-Mas music for Christmas holiday.)  In the past I've done projects using the ethernet shield for the Arduino UNO, so I was limited to where the projects could be put.\nNot finding a ESP8266 sketch that I could get to work correctly, I set out to make my own. Luckily I found making a few changes to my ethernet sketches, was easy to do.\nFor more Info on  Cheerlights .\nTo see pictures and fritzing, click on pictures above.  I used a Neopixel 16 pixel ring, a nodemcu v.9 board. Arduino IDE 1.6.10 for Linux 64bit, the following libraries are required:  ESP8266WiFi.h - This library gets installed when you add the ESP8266 boards to the Arduino IDE. Information and Setup can be found  here .  Adafruit_NeoPixel.h -  Found Here \n This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.  Finally - The TimedAction.h library -  Found Here . Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.", 
+            "title": "Info"
+        }, 
+        {
+            "location": "/#notes", 
+            "text": "NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.  It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.", 
+            "title": "Notes:"
+        }, 
+        {
+            "location": "/pictures/", 
+            "text": "NodeMCU (ESP8266) Pictures\n\n\n\nNodeMCU v.9\n\n\n\n\nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU. \n\n\n\nWhat mine looks like on a breadboard.", 
+            "title": "Pictures"
+        }, 
+        {
+            "location": "/pictures/#nodemcu-esp8266-pictures", 
+            "text": "NodeMCU v.9  \nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU.   \nWhat mine looks like on a breadboard.", 
+            "title": "NodeMCU (ESP8266) Pictures"
+        }, 
+        {
+            "location": "/license/", 
+            "text": "/* Copyright 2016 LeRoy Miller\nThis program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see \nhttp://www.gnu.org/licenses\n\n\n\n*/", 
+            "title": "License"
+        }, 
+        {
+            "location": "/README/", 
+            "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nInstallation\n\n\nThings To Do\n\n\nUsage\n\n\nContributing\n\n\n\n\nFork it!\n\n\nCreate your feature branch: \ngit checkout -b my-new-feature\n\n\nCommit your changes: \ngit commit -am 'Add some feature'\n\n\nPush to the branch: \ngit push origin my-new-feature\n\n\nSubmit a pull request\n\n\n\n\nCredits\n\n\nLeRoy F. Miller (copyright 2016)\n\n\nLicense\n\n\n/* Copyright 2016 LeRoy Miller\nThis program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see \nhttp://www.gnu.org/licenses\n\n\n\n*/", 
+            "title": "README"
+        }, 
+        {
+            "location": "/README/#nodemcu-esp8266-neopixel-cheerlights", 
+            "text": "", 
+            "title": "NodeMCU (ESP8266) Neopixel Cheerlights"
+        }, 
+        {
+            "location": "/README/#installation", 
+            "text": "", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/README/#things-to-do", 
+            "text": "", 
+            "title": "Things To Do"
+        }, 
+        {
+            "location": "/README/#usage", 
+            "text": "", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/README/#contributing", 
+            "text": "Fork it!  Create your feature branch:  git checkout -b my-new-feature  Commit your changes:  git commit -am 'Add some feature'  Push to the branch:  git push origin my-new-feature  Submit a pull request", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/README/#credits", 
+            "text": "LeRoy F. Miller (copyright 2016)", 
+            "title": "Credits"
+        }, 
+        {
+            "location": "/README/#license", 
+            "text": "/* Copyright 2016 LeRoy Miller\nThis program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.  This program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see  http://www.gnu.org/licenses  */", 
+            "title": "License"
+        }
+    ]
+}
