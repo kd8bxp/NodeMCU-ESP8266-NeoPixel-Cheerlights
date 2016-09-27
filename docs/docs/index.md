@@ -27,10 +27,21 @@ Adafruit_NeoPixel.h - [Found Here](https://github.com/adafruit/Adafruit_NeoPixel
 
 Finally - The TimedAction.h library - [Found Here](http://playground.arduino.cc/Code/TimedAction). Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.
 
-##Notes:
+##Known Issue:
+
+I am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.
+
+It has something to do with the stack. But it's beyond my knowledge at this time.
+So if anyone know how to fix it, please let me know.
+
+
+##Other Notes:
 
 NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.
 I've also dimmed the brightness down.
 I've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.
 
 It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use "Pin 2" you'd need to say "D2" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.
+
+I own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0
+

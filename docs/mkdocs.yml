@@ -1,8 +1,10 @@
-site_name: NodeMCU (ESP8266) Neopixel Cheerlights
+site_name: NodeMCU Neopixel Cheerlights
 
 pages:
 - Home: 'index.md'
-- Pictures: 'pictures.md'
+- Add Sound: 'mp3.md'
+- Pictures 1: 'pictures.md'
+- Pictures 2: 'picturesmp3.md'
 - License: 'license.md'
-- README: 'README.md'
+- Readme: 'README.md'
 
