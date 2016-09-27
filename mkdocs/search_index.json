@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nProject Github Page\n.\n\n\nInfo\n\n\nCheerlights is a world wide light show, all controlled by sending tweets to twitter to change the color! People build various projects for the light show. Generally it's around Christmas time, but really Cheerlights spread the cheer all year long.\n\n\nThis is the beginning of a Halloween cheerlight project.\nThe final project will make spooky noises when the colors change.\nAnd put in either a pumpkin or a skull (not sure yet).\n(This could be easy to change to X-Mas music for Christmas holiday.)\n\n\nIn the past I've done projects using the ethernet shield for the Arduino UNO, so I was limited to where the projects could be put.\nNot finding a ESP8266 sketch that I could get to work correctly, I set out to make my own. Luckily I found making a few changes to my ethernet sketches, was easy to do.\nFor more Info on \nCheerlights\n.\nTo see pictures and fritzing, click on pictures above.\n\n\nI used a Neopixel 16 pixel ring, a nodemcu v.9 board. Arduino IDE 1.6.10 for Linux 64bit, the following libraries are required:\n\n\nESP8266WiFi.h - This library gets installed when you add the ESP8266 boards to the Arduino IDE. Information and Setup can be found \nhere\n.\n\n\nAdafruit_NeoPixel.h - \nFound Here\n\n This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.\n\n\nFinally - The TimedAction.h library - \nFound Here\n. Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.\n\n\nNotes:\n\n\nNodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.\n\n\nIt should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.", 
+            "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nProject Github Page\n.\n\n\nInfo\n\n\nCheerlights is a world wide light show, all controlled by sending tweets to twitter to change the color! People build various projects for the light show. Generally it's around Christmas time, but really Cheerlights spread the cheer all year long.\n\n\nThis is the beginning of a Halloween cheerlight project.\nThe final project will make spooky noises when the colors change.\nAnd put in either a pumpkin or a skull (not sure yet).\n(This could be easy to change to X-Mas music for Christmas holiday.)\n\n\nIn the past I've done projects using the ethernet shield for the Arduino UNO, so I was limited to where the projects could be put.\nNot finding a ESP8266 sketch that I could get to work correctly, I set out to make my own. Luckily I found making a few changes to my ethernet sketches, was easy to do.\nFor more Info on \nCheerlights\n.\nTo see pictures and fritzing, click on pictures above.\n\n\nI used a Neopixel 16 pixel ring, a nodemcu v.9 board. Arduino IDE 1.6.10 for Linux 64bit, the following libraries are required:\n\n\nESP8266WiFi.h - This library gets installed when you add the ESP8266 boards to the Arduino IDE. Information and Setup can be found \nhere\n.\n\n\nAdafruit_NeoPixel.h - \nFound Here\n\n This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.\n\n\nFinally - The TimedAction.h library - \nFound Here\n. Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.\n\n\nKnown Issue:\n\n\nI am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.\n\n\nIt has something to do with the stack. But it's beyond my knowledge at this time.\nSo if anyone know how to fix it, please let me know.\n\n\nOther Notes:\n\n\nNodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.\n\n\nIt should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.\n\n\nI own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0", 
             "title": "Home"
         }, 
         {
@@ -16,18 +16,63 @@
             "title": "Info"
         }, 
         {
-            "location": "/#notes", 
-            "text": "NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.  It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.", 
-            "title": "Notes:"
+            "location": "/#known-issue", 
+            "text": "I am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.  It has something to do with the stack. But it's beyond my knowledge at this time.\nSo if anyone know how to fix it, please let me know.", 
+            "title": "Known Issue:"
+        }, 
+        {
+            "location": "/#other-notes", 
+            "text": "NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.  It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.  I own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0", 
+            "title": "Other Notes:"
+        }, 
+        {
+            "location": "/mp3/", 
+            "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nProject Github Page\n.\n\n\nMP3 version is in directory - 'Cheerlights_ESP8266_Neopixels_v4.1_with_sound'\n\n\nWhy? Because I was testing this and saved it into a different directory with out thinking about it.\n\n\nIt's probably better that way. One sketch with sound, one sketch without.\n\n\nInfo\n\n\nI used a cheap MP3 player I found on eBay. Catalex Serial MP3 player. \neBay Link\n\nThese players are around $5 or $6 U.S. dollars. Documentation can be a little hard to time, but not impossable. (ask the seller they should have a link to it)\n\n\nI found 8 or 9 free \"Halloween Sound effects\" downloaded them and put them on a SD card. \nNOTE: I renamed each file to just numbers (scream.wav - became 01.wav, wolf.wav - became 02.wav, etc.) Not really needed for this to work, but any file name longer then 8 character will need to be renamed.\n\n\nUpdated Sketch:\n\n\nThe updated sketch, not only added support for the MP3 player, but also changed the API used from thingspeak. \nThe new API will return the site headers, plus a RGB number in HEX.\nThe 1st thing I had to do was to remove the header, but just having the HEX color made the code smaller and able to display any color that was sent.\n\n\nKnown Issue:\n\n\nI am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.\n\n\nIt has something to do with the stack. But it's beyond my knowledge at this time.\nSo if anyone know how to fix it, please let me know.\n\n\nOther Notes:\n\n\nNodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.\n\n\nIt should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.\n\n\nI own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0", 
+            "title": "Add Sound"
+        }, 
+        {
+            "location": "/mp3/#nodemcu-esp8266-neopixel-cheerlights", 
+            "text": "Project Github Page .  MP3 version is in directory - 'Cheerlights_ESP8266_Neopixels_v4.1_with_sound'  Why? Because I was testing this and saved it into a different directory with out thinking about it.  It's probably better that way. One sketch with sound, one sketch without.", 
+            "title": "NodeMCU (ESP8266) Neopixel Cheerlights"
+        }, 
+        {
+            "location": "/mp3/#info", 
+            "text": "I used a cheap MP3 player I found on eBay. Catalex Serial MP3 player.  eBay Link \nThese players are around $5 or $6 U.S. dollars. Documentation can be a little hard to time, but not impossable. (ask the seller they should have a link to it)  I found 8 or 9 free \"Halloween Sound effects\" downloaded them and put them on a SD card. \nNOTE: I renamed each file to just numbers (scream.wav - became 01.wav, wolf.wav - became 02.wav, etc.) Not really needed for this to work, but any file name longer then 8 character will need to be renamed.", 
+            "title": "Info"
+        }, 
+        {
+            "location": "/mp3/#updated-sketch", 
+            "text": "The updated sketch, not only added support for the MP3 player, but also changed the API used from thingspeak. \nThe new API will return the site headers, plus a RGB number in HEX.\nThe 1st thing I had to do was to remove the header, but just having the HEX color made the code smaller and able to display any color that was sent.", 
+            "title": "Updated Sketch:"
+        }, 
+        {
+            "location": "/mp3/#known-issue", 
+            "text": "I am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.  It has something to do with the stack. But it's beyond my knowledge at this time.\nSo if anyone know how to fix it, please let me know.", 
+            "title": "Known Issue:"
+        }, 
+        {
+            "location": "/mp3/#other-notes", 
+            "text": "NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.\nI've also dimmed the brightness down.\nI've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.  It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use \"Pin 2\" you'd need to say \"D2\" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.  I own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0", 
+            "title": "Other Notes:"
         }, 
         {
             "location": "/pictures/", 
-            "text": "NodeMCU (ESP8266) Pictures\n\n\n\nNodeMCU v.9\n\n\n\n\nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU. \n\n\n\nWhat mine looks like on a breadboard.", 
-            "title": "Pictures"
+            "text": "NodeMCU (ESP8266) Pictures\n\n\n\n\n\nNodeMCU v.9\n\n\n\n\nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU. \n\n\n\nWhat mine looks like on a breadboard.", 
+            "title": "Pictures 1"
         }, 
         {
             "location": "/pictures/#nodemcu-esp8266-pictures", 
             "text": "NodeMCU v.9  \nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU.   \nWhat mine looks like on a breadboard.", 
+            "title": "NodeMCU (ESP8266) Pictures"
+        }, 
+        {
+            "location": "/picturesmp3/", 
+            "text": "NodeMCU (ESP8266) Pictures\n\n\n\n\n\n\n\nHook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU. \non the MP3 player - D0 is connected to TX, and D1 to RX\n\n\n\nWhat mine looks like on a breadboard.", 
+            "title": "Pictures 2"
+        }, 
+        {
+            "location": "/picturesmp3/#nodemcu-esp8266-pictures", 
+            "text": "Hook up Guide.\nNote: The sketch is using pin 2, which is really pin D4 on the NODEMCU. \non the MP3 player - D0 is connected to TX, and D1 to RX  \nWhat mine looks like on a breadboard.", 
             "title": "NodeMCU (ESP8266) Pictures"
         }, 
         {
@@ -38,7 +83,7 @@
         {
             "location": "/README/", 
             "text": "NodeMCU (ESP8266) Neopixel Cheerlights\n\n\nInstallation\n\n\nThings To Do\n\n\nUsage\n\n\nContributing\n\n\n\n\nFork it!\n\n\nCreate your feature branch: \ngit checkout -b my-new-feature\n\n\nCommit your changes: \ngit commit -am 'Add some feature'\n\n\nPush to the branch: \ngit push origin my-new-feature\n\n\nSubmit a pull request\n\n\n\n\nCredits\n\n\nLeRoy F. Miller (copyright 2016)\n\n\nLicense\n\n\n/* Copyright 2016 LeRoy Miller\nThis program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see \nhttp://www.gnu.org/licenses\n\n\n\n*/", 
-            "title": "README"
+            "title": "Readme"
         }, 
         {
             "location": "/README/#nodemcu-esp8266-neopixel-cheerlights", 

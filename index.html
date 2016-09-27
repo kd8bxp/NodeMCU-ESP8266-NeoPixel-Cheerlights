@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>NodeMCU (ESP8266) Neopixel Cheerlights</title>
+	<title>NodeMCU Neopixel Cheerlights</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">NodeMCU (ESP8266) Neopixel Cheerlights</a>
+            <a class="navbar-brand" href=".">NodeMCU Neopixel Cheerlights</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -60,7 +60,19 @@
                 
                 
                     <li >
-                        <a href="pictures/">Pictures</a>
+                        <a href="mp3/">Add Sound</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="pictures/">Pictures 1</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="picturesmp3/">Pictures 2</a>
                     </li>
                 
                 
@@ -72,7 +84,7 @@
                 
                 
                     <li >
-                        <a href="README/">README</a>
+                        <a href="README/">Readme</a>
                     </li>
                 
                 
@@ -92,7 +104,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="pictures/">
+                        <a rel="prev" href="mp3/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -112,7 +124,9 @@
         
             <li><a href="#info">Info</a></li>
         
-            <li><a href="#notes">Notes:</a></li>
+            <li><a href="#known-issue">Known Issue:</a></li>
+        
+            <li><a href="#other-notes">Other Notes:</a></li>
         
     
     </ul>
@@ -136,11 +150,16 @@ To see pictures and fritzing, click on pictures above.</p>
 <p>Adafruit_NeoPixel.h - <a href="https://github.com/adafruit/Adafruit_NeoPixel">Found Here</a>
  This may or may not be the best library for this project, but it is one that I've used in the past, and I understand how to make it work.</p>
 <p>Finally - The TimedAction.h library - <a href="http://playground.arduino.cc/Code/TimedAction">Found Here</a>. Note: I had to make a change to this library to get it to work with the new IDE. That is beyond the scope of this documentation.</p>
-<h2 id="notes">Notes:</h2>
+<h2 id="known-issue">Known Issue:</h2>
+<p>I am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.</p>
+<p>It has something to do with the stack. But it's beyond my knowledge at this time.
+So if anyone know how to fix it, please let me know.</p>
+<h2 id="other-notes">Other Notes:</h2>
 <p>NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.
 I've also dimmed the brightness down.
 I've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.</p>
-<p>It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use "Pin 2" you'd need to say "D2" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.</p></div>
+<p>It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use "Pin 2" you'd need to say "D2" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.</p>
+<p>I own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0</p></div>
             
         </div>
 
@@ -187,5 +206,5 @@ I've read that it is capable of driving 6 to 8 of the LEDs at one time, but why 
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-09-19 01:22:14.801573
+Build Date UTC : 2016-09-27 02:36:59.110447
 -->

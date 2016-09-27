@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Pictures 1 - NodeMCU Neopixel Cheerlights</title>
+	<title>Add Sound - NodeMCU Neopixel Cheerlights</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -59,14 +59,14 @@
                 
                 
                 
-                    <li >
-                        <a href="../mp3/">Add Sound</a>
+                    <li class="active">
+                        <a href="./">Add Sound</a>
                     </li>
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Pictures 1</a>
+                    <li >
+                        <a href="../pictures/">Pictures 1</a>
                     </li>
                 
                 
@@ -99,12 +99,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../mp3/">
+                        <a rel="next" href="..">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../picturesmp3/">
+                        <a rel="prev" href="../pictures/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -120,24 +120,45 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#nodemcu-esp8266-pictures">NodeMCU (ESP8266) Pictures</a></li>
+        <li class="main active"><a href="#nodemcu-esp8266-neopixel-cheerlights">NodeMCU (ESP8266) Neopixel Cheerlights</a></li>
+        
+            <li><a href="#info">Info</a></li>
+        
+            <li><a href="#updated-sketch">Updated Sketch:</a></li>
+        
+            <li><a href="#known-issue">Known Issue:</a></li>
+        
+            <li><a href="#other-notes">Other Notes:</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h3 id="nodemcu-esp8266-pictures">NodeMCU (ESP8266) Pictures</h3>
-<p><img alt="Pumpkin" src="../pictures/pumpkin.jpg" />
-<img alt="1" src="../pictures/1.jpg" />
-NodeMCU v.9
-<img alt="2" src="../pictures/2.jpg" />
-<img alt="3" src="../pictures/3.jpg" />
-Hook up Guide.
-Note: The sketch is using pin 2, which is really pin D4 on the NODEMCU. </p>
-<p><img alt="4" src="../pictures/4.jpg" />
-What mine looks like on a breadboard.</p>
-<p><img alt="Pumpkin Red" src="../pictures/pumpkinred.jpg" /></p></div>
+<h1 id="nodemcu-esp8266-neopixel-cheerlights">NodeMCU (ESP8266) Neopixel Cheerlights</h1>
+<p><a href="https://github.com/kd8bxp/NodeMCU-ESP8266-NeoPixel-Cheerlights">Project Github Page</a>.</p>
+<p>MP3 version is in directory - 'Cheerlights_ESP8266_Neopixels_v4.1_with_sound'</p>
+<p>Why? Because I was testing this and saved it into a different directory with out thinking about it.</p>
+<p>It's probably better that way. One sketch with sound, one sketch without.</p>
+<h2 id="info">Info</h2>
+<p>I used a cheap MP3 player I found on eBay. Catalex Serial MP3 player. <a href="http://www.ebay.com/itm/UART-Control-Serial-MP3-YX5300-Music-Player-Module-For-New-Arduino-PIC-AVR-ARM-/141929519081?hash=item210ba897e9:g:33AAAOSwIgNXiJ2l">eBay Link</a>
+These players are around $5 or $6 U.S. dollars. Documentation can be a little hard to time, but not impossable. (ask the seller they should have a link to it)</p>
+<p>I found 8 or 9 free "Halloween Sound effects" downloaded them and put them on a SD card. 
+NOTE: I renamed each file to just numbers (scream.wav - became 01.wav, wolf.wav - became 02.wav, etc.) Not really needed for this to work, but any file name longer then 8 character will need to be renamed.</p>
+<h2 id="updated-sketch">Updated Sketch:</h2>
+<p>The updated sketch, not only added support for the MP3 player, but also changed the API used from thingspeak. 
+The new API will return the site headers, plus a RGB number in HEX.
+The 1st thing I had to do was to remove the header, but just having the HEX color made the code smaller and able to display any color that was sent.</p>
+<h2 id="known-issue">Known Issue:</h2>
+<p>I am finding that from time to time, (it appears random), the NodeMCU board locks up.  And nothing happens, when this does happen the only thing I can do is unhook it from power, and restart it.</p>
+<p>It has something to do with the stack. But it's beyond my knowledge at this time.
+So if anyone know how to fix it, please let me know.</p>
+<h2 id="other-notes">Other Notes:</h2>
+<p>NodeMCU has limited power on it's 5v line - while it looks like more than one LED is on - truelly only 1 LED is on at a time.
+I've also dimmed the brightness down.
+I've read that it is capable of driving 6 to 8 of the LEDs at one time, but why risk it.</p>
+<p>It should also be noted that the NodeMCU boards pin maps are a bit weird. Pin 2 in the IDE is really D4 on the board.  IF you wanted to use "Pin 2" you'd need to say "D2" in the IDE then it would be maped to pin4 of the esp8266. Google it, there are a number of things about it.</p>
+<p>I own a NodeMCU v.9 board, the Fritzing picture shows a NodeMCU v1.0 board, there are some pin differences - v.9 has a 5v pin in place of the VIN pin on the v1.0</p></div>
             
         </div>
 
