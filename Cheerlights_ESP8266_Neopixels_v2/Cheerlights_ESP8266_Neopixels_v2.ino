@@ -1,7 +1,7 @@
 
 #include <ESP8266WiFi.h>
-#include <Adafruit_NeoPixel.h>
-#include <TimedAction.h>
+#include "src/Adafruit_NeoPixel/Adafruit_NeoPixel.h"
+#include "src/TimedAction/TimedAction.h"
 
 String lastCommandString = "black";
 int brightness = 150;
@@ -12,7 +12,7 @@ void getColor();
 //TimedAction PixelAction = TimedAction(40, colorWipe(uint32_t c, uint8_t wait));
 TimedAction getColorAction = TimedAction(15000, getColor);
 
-const char ssid[]     = "Motel6";
+const char ssid[]     = "";
 const char password[] = "";
 
 const char host[] = "api.thingspeak.com";
@@ -168,5 +168,3 @@ strip.show();
 	}
 	
 }
-
-

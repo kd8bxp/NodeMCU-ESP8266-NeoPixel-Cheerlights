@@ -1,7 +1,7 @@
 
 #include <ESP8266WiFi.h>
-#include <Adafruit_NeoPixel.h>
-#include <TimedAction.h>
+#include "src/Adafruit_NeoPixel/Adafruit_NeoPixel.h"
+#include "src/TimedAction/TimedAction.h"
 #include <SoftwareSerial.h>
 
 #define ARDUINO_RX D0//should connect to TX of the Serial MP3 Player module
@@ -31,7 +31,7 @@ void hardreset();
 TimedAction resetAction = TimedAction(60000, hardreset);
 TimedAction getColorAction = TimedAction(15000, getColor);
 
-const char ssid[]     = "Motel6";
+const char ssid[]     = "";
 const char password[] = "";
 
 const char host[] = "api.thingspeak.com";

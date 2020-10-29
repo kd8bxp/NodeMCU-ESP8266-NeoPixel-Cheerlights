@@ -1,6 +1,6 @@
 
 #include <ESP8266WiFi.h>
-#include <Adafruit_NeoPixel.h>
+#include "src/Adafruit_NeoPixel/Adafruit_NeoPixel.h"
 
 #define thingSpeakInterval 16000 // Time interval in milliseconds to get data from ThingSpeak (number of seconds * 1000 = interval)
 // Variable Setup
@@ -14,7 +14,7 @@ int brightness = 150;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(16, 2, NEO_GRB + NEO_KHZ800);
 
-const char ssid[]     = "Motel6";
+const char ssid[]     = "";
 const char password[] = "";
 
 const char host[] = "api.thingspeak.com";
@@ -166,4 +166,3 @@ strip.show();
 	}
 	
 }
-

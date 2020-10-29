@@ -1,7 +1,7 @@
 
 #include <SPI.h>
 #include <Ethernet.h>
-#include <Adafruit_NeoPixel.h>
+#include "src/Adafruit_NeoPixel/Adafruit_NeoPixel.h"
 
 // Local Network Settings
 byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0x4C, 0x84 }; // Must be unique on local network
@@ -191,4 +191,3 @@ delay(wait);
 	}
 	
 }
-
